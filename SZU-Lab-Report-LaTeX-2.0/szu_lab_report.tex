@@ -1,0 +1,110 @@
+\documentclass[12pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{ctex} 
+\usepackage{geometry}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{tabularx} 
+\usepackage{array}
+
+% 全局页面设置
+\geometry{top=3cm, bottom=3cm, left=2.5cm, right=2.5cm}
+\pagestyle{empty} 
+
+% 定义普通正文方框命令
+\newcommand{\mylabsection}[2]{%
+    \par\nointerlineskip%
+    \noindent%
+    \begin{tabularx}{\textwidth}{|@{}X@{}|}% 使用 @{} 消除列间距，确保宽度一致
+        \hline
+        \hspace{1em}{\zihao{5} #1} \\
+        \rule{0pt}{#2} \\ \hline
+    \end{tabularx}%
+}
+
+% 定义全页完整方框命令（仅此页左下角带标识）
+\newcommand{\myfullpagebox}{%
+    \newpage%
+    \noindent%
+    \begin{tabularx}{\textwidth}{|@{}X@{}|} % 确保与普通框等宽
+        \hline
+        \rule{0pt}{22.5cm} \\ % 方框高度
+        \hline
+    \end{tabularx}%
+    \par\nointerlineskip%
+    \noindent{\zihao{5}\songti 深圳大学学生实验报告用纸}% 左下角对齐
+}
+
+\begin{document}
+
+% --- 第一页：封面 (左边距增大) ---
+\newgeometry{top=3cm, bottom=3cm, left=4cm, right=2.5cm} 
+
+\begin{center}
+    \vspace*{1cm}
+    {\Huge \textbf{深 圳 大 学 实 验 报 告}} \\
+    \vspace{2cm}
+\end{center}
+
+\begin{flushleft}
+    \zihao{4} \bfseries 
+    \begin{spacing}{1.2}
+        \begin{tabular}{ll}
+            课程名称：\underline{\makebox[25em][l]{}} \\[8ex]
+            实验项目名称：\underline{\makebox[23em][l]{}} \\[8ex]
+            学院：\underline{\makebox[25em][l]{}} \\[8ex]
+            专业：\underline{\makebox[25em][l]{}} \\[8ex]
+            指导教师：\underline{\makebox[25em][l]{}} \\[8ex]
+            报告人：\underline{\makebox[6em][l]{}}\hspace{1.5em}学号：\underline{\makebox[6em][l]{}}\hspace{1.5em}班级：\underline{\makebox[6em][l]{}} \\[8ex]
+            实验时间：\underline{\makebox[25em][l]{}} \\[8ex]
+            实验报告提交时间：\underline{\makebox[23em][l]{}} 
+        \end{tabular}
+    \end{spacing}
+\end{flushleft}
+
+\vfill
+\begin{center}
+    {\Large \textbf{教务部制}}
+\end{center}
+
+\newpage 
+\restoregeometry % 恢复全局边距
+
+% --- 第二页：实验正文 ---
+\mylabsection{实验目的与要求：}{10cm}%
+\mylabsection{方法、步骤：}{10cm}%
+\mylabsection{实验过程及内容：}{10cm}%
+
+% 数据处理分析 
+\mylabsection{数据处理分析：}{10cm}%
+
+% --- 第三页：全页大方框 (仅在此页左下角有标识) ---
+\myfullpagebox
+
+% --- 第四页：结论与评分 ---
+\mylabsection{实验结论：}{7cm}%
+
+% 评分区
+\par\nointerlineskip
+\noindent
+\begin{tabularx}{\textwidth}{|@{}X@{}|}
+    \hline
+    \hspace{1em}\zihao{-4} 指导教师批阅意见：\\[4cm] 
+    \hspace{1em}成绩评定： \\[4cm] 
+    \hspace*{23em} 指导教师签字： \\
+    \hspace*{23em} \makebox[3em]{}年\makebox[2em]{}月\makebox[2em]{}日 \\ [1em]
+\end{tabularx}%
+
+% 备注框
+\mylabsection{备注：}{2cm}%
+
+% 底部注释
+\begin{spacing}{1.2}
+    \zihao{5}
+    \noindent \begin{tabular}{@{}l p{35em}@{}}
+        注： & 1、报告内的项目或内容设置，可根据实际情况加以调整和补充。 \\
+             & 2、教师批改学生实验报告时间应在学生提交实验报告时间后 10 日内。
+    \end{tabular}
+\end{spacing}
+
+\end{document}

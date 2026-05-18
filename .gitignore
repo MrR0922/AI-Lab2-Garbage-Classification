@@ -1,0 +1,16 @@
+# 大型数据集和压缩包
+garbage-classification.zip
+garbage-classification/
+garbage-classification_split/
+
+# 模型权重（预训练基础权重）
+yolo11n-cls.pt
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# 临时文件
+*.tmp
+.DS_Store
