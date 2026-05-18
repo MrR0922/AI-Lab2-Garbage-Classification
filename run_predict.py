@@ -7,7 +7,7 @@ import os
 matplotlib.rcParams['font.sans-serif'] = ['SimHei']
 matplotlib.rcParams['axes.unicode_minus'] = False
 
-model = YOLO('runs/classify/runs/classify/garbage_exp/weights/best.pt')
+model = YOLO('runs/classify/runs/classify/garbage_exp_v24/weights/best.pt')
 
 test_dir = 'test'
 output_dir = 'SZU-Lab-Report-LaTeX-2.0/SZU-Lab-Report-LaTeX'
